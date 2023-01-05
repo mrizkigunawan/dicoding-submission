@@ -313,6 +313,7 @@ main {
 .restaurant-item__name {
   display: inline-block;
   font-size: 18px;
+  line-height: 44px;
   font-weight: 500;
   color: var(--black);
   text-decoration: none;
@@ -341,6 +342,10 @@ main {
   letter-spacing: .5px;
   line-height: 1;
   color: var(--grey);
+}
+
+.restaurant-item__description {
+  margin-top: 0;
 }
 
 .restaurant-item__description,
@@ -569,7 +574,7 @@ main {
 .review-input__submit,
 .favorite-button {
   display: block;
-  height: 40px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
