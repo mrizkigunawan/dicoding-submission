@@ -1,7 +1,22 @@
 import 'regenerator-runtime'; /* for async await transpile */
-import main from './main.js';
+import App from './views/app';
+import swRegister from './utils/sw-register';
 // styles
 import '../styles/main.css';
 import '../styles/responsive.css';
 
-document.addEventListener('DOMContentLoaded', main)
+const app = new App({
+  button: document.querySelector('.nav__toggler-button'),
+  drawer: document.querySelector('.nav__menu'),
+  content: document.querySelector('.main'),
+  snackbarContainer: document.querySelector('.snackbar'),
+});
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
+});
